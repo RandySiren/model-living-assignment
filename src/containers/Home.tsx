@@ -1,10 +1,13 @@
-import { Header } from '../components';
+import { Header, Search, Grid } from '../components';
+import styles from './Home.module.css';
 
 const Home = (): JSX.Element => {
   return (
-    <>
-      <Header text={'HI'} />
-    </>
+    <div className={styles.layout}>
+      <Header text={"Manny's Giphy GIF Searcher"} />
+      <Search />
+      <Grid />
+    </div>
   );
 };
 
