@@ -1,2 +1,18 @@
-.Header {
+@import '../../styles/variables';
+
+.grid {
+  margin-top: $spacing-05;
+
+  &__gifs {
+    display: flex;
+    flex-wrap: wrap;
+    padding: $spacing-01;
+
+    &__gif {
+      padding: $spacing-01;
+      height: auto;
+      width: 30%;
+      object-fit: cover;
+    }
+  }
 }
