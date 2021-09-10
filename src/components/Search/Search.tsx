@@ -2,10 +2,26 @@ import './Search.scss';
 
 import { useState } from 'react';
 
-// type SearchProps = {};
+type SearchProps = {
+  setSearchResults: React.Dispatch<React.SetStateAction<string[]>>;
+};
 
-const Search = (): JSX.Element => {
+const Search = ({ setSearchResults }: SearchProps): JSX.Element => {
   const [searchQuery, setSearchQuery] = useState<string>();
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    // NOTE: API Keys must be stored locally, for the sake of downloading and running and simplicity we will store it directly
+    fetch(
+      `http://api.giphy.com/v1/gifs/search?api_key=jdNWJ6plFGt0nIza8kMG7znyZgVK2lEx&q=${searchQuery}&limit=20&offset=0`
+    )
+      .then((resp) => resp.json())
+      .then((resp) => {
+        const resultArray: string[] = [];
+        resp.data.map((data: any) => resultArray.push(data.embed_url));
+        setSearchResults(resultArray);
+      });
+  };
   return (
     <div className={'search'}>
       <form className={'search__form'} action='/' method='get'>
@@ -14,7 +30,11 @@ const Search = (): JSX.Element => {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <button className={'search__form__button'} type='submit'>
+        <button
+          className={'search__form__button'}
+          type='submit'
+          onClick={(e) => handleClick(e)}
+        >
           Search
         </button>
       </form>
