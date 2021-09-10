@@ -1,9 +1,9 @@
-import styles from './Grid.module.css';
+import './Grid.scss';
 
 // type GridProps = {};
 
 const Grid = (): JSX.Element => {
-  return <div className={styles.Header}></div>;
+  return <div className={'Header'}></div>;
 };
 
 export default Grid;

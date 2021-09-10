@@ -1,11 +1,11 @@
-import styles from './Header.module.css';
+import './Header.scss';
 
 type HeaderProps = {
   text: string;
 };
 
 const Header = ({ text }: HeaderProps): JSX.Element => {
-  return <div className={styles.Header}>{text}</div>;
+  return <div className={'header'}>{text}</div>;
 };
 
 export default Header;

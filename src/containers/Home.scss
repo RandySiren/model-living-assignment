@@ -1,0 +1,10 @@
+@import '../styles/variables';
+
+.home_layout {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-05;
+  max-width: 100rem;
+  margin: auto;
+  align-items: center;
+}

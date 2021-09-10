@@ -1,0 +1,9 @@
+@import '../../styles/variables';
+
+.header {
+  color: black;
+  font-weight: bold;
+  font-size: $spacing-05;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: $spacing-03;
+}
