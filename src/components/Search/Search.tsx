@@ -7,7 +7,7 @@ type SearchProps = {
 };
 
 const Search = ({ setSearchResults }: SearchProps): JSX.Element => {
-  const [searchQuery, setSearchQuery] = useState<string>();
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
